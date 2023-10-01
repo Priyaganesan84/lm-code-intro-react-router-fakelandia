@@ -5,7 +5,7 @@ interface MisdemeanourData {
   citizenId: number;
   date: string;
   misdemeanour: string;
-  punishmentIdea: string; // This will be an image URL
+  punishmentIdea: string; 
 }
 
 interface MisdemeanourResponse {
