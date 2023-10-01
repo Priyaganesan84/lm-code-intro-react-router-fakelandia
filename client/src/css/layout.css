@@ -1,0 +1,30 @@
+/* Layout.css */
+
+/* Header styles */
+header {
+    background-color: gray;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 24px;
+  }
+  
+  /* Navigation styles */
+  nav {
+    margin-top: 20px;
+  }
+  
+  nav a {
+    margin-right: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../css/misdemeanour.css';
 
 interface MisdemeanourData {
   citizenId: number;
@@ -68,7 +69,7 @@ const Misdemeanour: React.FC = () => {
   }, [filter, misdemeanours]);
 
   return (
-    <div>
+    <div className="container">
       <h2>Misdemeanours Page</h2>
       <div>
         Filter by Misdemeanour:

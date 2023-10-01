@@ -1,12 +1,16 @@
-// Home.tsx
 import React from 'react';
+import '../css/Home.css';
 
 const Home: React.FC = () => {
   return (
-    <>
-      <h2>Welcome to the home of the justice department of Fakelandia</h2>
-      <p>Here you can browse a list of recent misdemeanours committed by our citizens, or you can confess to your own misdemeanour.</p>
-    </>
+    <div className="container">
+      <h2>
+        Welcome to the home of the Justice Department of Fakelandia
+      </h2>
+      <p>
+        Here you can browse a list of recent misdemeanours committed by our citizens, or you can confess to your own misdemeanour.
+      </p>
+    </div>
   );
 }
 

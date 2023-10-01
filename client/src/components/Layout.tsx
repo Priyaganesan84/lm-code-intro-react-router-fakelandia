@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from 'react-router-dom'
-import './Header.css'; // Import the CSS file
+import '../css/layout.css';
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,15 +8,16 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div>
+    <div >
       <header>
-        <div className="App-header">
-          <h1>Fakelandia Justice Department</h1>
-      
-          <Link to="/">Home</Link>
-          <Link to="/misdemeanour">Misdemeanours</Link>
-          <Link to="/confession">Confess to Us</Link>
-        </div>
+        <div >
+          <h1 >Fakelandia Justice Department</h1>
+          <nav >
+            <Link to="/">Home</Link>
+            <Link to="/misdemeanour">Misdemeanours</Link>
+            <Link to="/confession">Confess to Us</Link>
+          </nav>
+          </div>
       </header>
       <main>{children}</main>
     </div>
