@@ -11,7 +11,7 @@ function ConfessionForm() {
   });
 
   const [isFormValid, setIsFormValid] = useState(false);
-  const [submitResponse, setSubmitResponse] = useState<ApiResponse | null>(null); // Annotate submitResponse with ApiResponse type
+  const [submitResponse, setSubmitResponse] = useState<ApiResponse | null>(null);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -22,11 +22,10 @@ function ConfessionForm() {
     const isReasonValid = formData.reason !== '';
     const isDetailsValid = formData.details.length >= 10; // Minimum 10 characters
 
-    // Update isFormValid based on your validation rules and the updated form data
     setIsFormValid(isSubjectValid && isReasonValid && isDetailsValid);
   };
 
-  const handleSubmit = async (event: React.FormEvent) => { // Annotate event with React.FormEvent
+  const handleSubmit = async (event: React.FormEvent) => { 
     event.preventDefault();
 
     try {
@@ -51,9 +50,7 @@ function ConfessionForm() {
             // Handle the case where it's just talk
             console.log('Just wanted to talk.');
           } else {
-            // Handle the case of a real confession
             console.log('Confession submitted successfully.');
-            // Optionally, you can clear the form fields here
             setFormData({ subject: '', reason: '', details: '' });
           }
         } else {
