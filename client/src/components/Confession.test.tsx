@@ -27,3 +27,15 @@ describe('ConfessionForm Component', () => {
   });
 });
 
+it('displays validation message for "Details"', () => {
+  render(<ConfessionForm />);
+  
+  // Fill out the form inputs with invalid values for "Details"
+  fireEvent.change(screen.getByLabelText('Details'), { target: { value: 'Short' } });
+
+  // Find the validation message element
+  const validationMessage = screen.getByText('Details must be at least 10 characters.');
+
+  // Ensure that the validation message is displayed
+  expect(validationMessage).toBeInTheDocument();
+});

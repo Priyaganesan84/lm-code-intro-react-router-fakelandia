@@ -12,6 +12,8 @@ function ConfessionForm() {
 
   const [isFormValid, setIsFormValid] = useState(false);
   const [submitResponse, setSubmitResponse] = useState<ApiResponse | null>(null);
+  const [validationMessage, setValidationMessage] = useState('');
+
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -23,6 +25,8 @@ function ConfessionForm() {
     const isDetailsValid = formData.details.length >= 10; // Minimum 10 characters
 
     setIsFormValid(isSubjectValid && isReasonValid && isDetailsValid);
+    setValidationMessage(isDetailsValid ? '' : 'Details must be at least 10 characters.');
+
   };
 
   const handleSubmit = async (event: React.FormEvent) => { 
@@ -105,6 +109,8 @@ function ConfessionForm() {
             onChange={handleInputChange}
             required
           ></textarea>
+            <div className="validation-message">{validationMessage}</div>
+
         </div>
         <button type="submit" disabled={!isFormValid}>
           Confess
