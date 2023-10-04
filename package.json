@@ -11,7 +11,9 @@
 		"start-client": "cd client && npm start",
 		"test-client": "cd client && npm test",
 		"test-server": "cd server && npm test",
-		"start": "concurrently -n client,server -c cyan,magenta \"npm run start-client\" \"npm run start-server\""
+		"test": "npm run test-client && npm run test-server",
+ 	"start": "concurrently -n client,server -c cyan,magenta \"npm run start-client\" \"npm run start-server\""
+
 	},
 	"dependencies": {
 		"@types/express": "^4.17.14",
@@ -38,8 +40,11 @@
 	},
 	"homepage": "https://github.com/techreturners/lm-code-intro-react-router-fakelandia#readme",
 	"devDependencies": {
+		"@testing-library/jest-dom": "^6.1.3",
+		"@testing-library/react": "^14.0.0",
 		"@types/cors": "^2.8.13",
 		"autoprefixer": "^10.4.16",
+		"jest": "^29.7.0",
 		"postcss": "^8.4.30",
 		"tailwindcss": "^3.3.3",
 		"vite": "^4.4.9"

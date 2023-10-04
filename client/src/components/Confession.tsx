@@ -113,7 +113,7 @@ function ConfessionForm() {
       {submitResponse && (
         <div>
           {submitResponse.success ? (
-            <p>{submitResponse.justTalked ? 'Just wanted to talk.' : 'Confession submitted successfully.'}</p>
+            <p>{submitResponse.justTalked ? 'Thank your for talking to us. Your message has been received' : 'Confession submitted successfully.'}</p>
           ) : (
             <p>Error: {submitResponse.message}</p>
           )}

@@ -56,27 +56,26 @@ const Misdemeanour: React.FC = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    // Filter misdemeanours based on the selected filter
-    if (filter === '') {
+  // Define a function to handle filtering
+  const handleFilter = (selectedFilter: string) => {
+    setFilter(selectedFilter);
+
+    if (selectedFilter === '') {
+      // If no filter is selected, show all misdemeanours
       setFilteredMisdemeanours(misdemeanours);
     } else {
-        console.log("Filter" + filter);
-
-      const filtered = misdemeanours.filter((m) => m.misdemeanour === filter);
+      // Filter misdemeanours based on the selected filter
+      const filtered = misdemeanours.filter((m) => m.misdemeanour === selectedFilter);
       setFilteredMisdemeanours(filtered);
     }
-  }, [filter, misdemeanours]);
-
+  };
   return (
     <div className="container">
       <h2>Misdemeanours Page</h2>
       <div>
         Filter by Misdemeanour:
-        <select onChange={
-            (e) => setFilter(e.target.value)}>
-                console.log(e.target.value);
-          <option value="">All</option>
+        <select onChange={(e) => handleFilter(e.target.value)} value={filter}>
+            <option value="">All</option>
           <option value="rudeness">Mild Public Rudeness</option>
           <option value="lift">Speaking in a Lift</option>
           <option value="vegetables">Not Eating Your Vegetables</option>
