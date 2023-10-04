@@ -49,6 +49,7 @@ const Misdemeanour: React.FC = () => {
         setMisdemeanours(misdemeanoursWithImages);
         setFilteredMisdemeanours(misdemeanoursWithImages);
       } catch (error) {
+        
         console.error('Error fetching data:', error);
       }
     };
@@ -58,6 +59,8 @@ const Misdemeanour: React.FC = () => {
 
   // Define a function to handle filtering
   const handleFilter = (selectedFilter: string) => {
+    console.log('Selected filter:', selectedFilter);
+
     setFilter(selectedFilter);
 
     if (selectedFilter === '') {
