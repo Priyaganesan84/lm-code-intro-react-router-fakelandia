@@ -7,6 +7,8 @@ import Misdemeanour from './components/Misdemeanour';
 import NotFound from './components/NotFound';
 
 const App: React.FC = () => {
+
+
   return (
     <Router>
       <Routes>

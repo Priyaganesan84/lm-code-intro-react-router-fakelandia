@@ -16,9 +16,10 @@ const Misdemeanour: React.FC = () => {
   const [misdemeanours, setMisdemeanours] = useState<MisdemeanourData[]>([]);
   const [filteredMisdemeanours, setFilteredMisdemeanours] = useState<MisdemeanourData[]>([]);
   const [filter, setFilter] = useState<string>('');
-
+ 
   useEffect(() => {
     // Fetch misdemeanour data when the component mounts
+    
     const fetchData = async () => {
       try {
         const response = await fetch('http://localhost:8080/api/misdemeanours/10');
@@ -128,3 +129,4 @@ const Misdemeanour: React.FC = () => {
 };
 
 export default Misdemeanour;
+
